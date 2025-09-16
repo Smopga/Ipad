@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LucaCoin Kaufseite</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2em;
+    }
+    .card {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 15px;
+      display: inline-block;
+      margin-top: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+    input {
+      width: 250px;
+    }
+    button {
+      background: #00c853;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #009624;
+    }
+    #confirmation {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #76ff03;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚀 Kaufe LucaCoin</h1>
+  <p>Die Zukunft der Kryptowährung – direkt hier erhältlich!</p>
 
+  <div class="card">
+    <h2>Jetzt kaufen</h2>
+    <p>Preis: 1 LucaCoin = 1€</p>
+    <input type="number" id="amount" placeholder="Menge LucaCoin" min="1"><br>
+    <input type="text" id="wallet" placeholder="Deine Wallet-Adresse"><br>
+    <button onclick="buy()">Kaufen</button>
+    <p id="confirmation">✅ Vielen Dank! Deine LucaCoins werden gesendet.</p>
+  </div>
+
+  <script>
+    function buy() {
+      const amount = document.getElementById("amount").value;
+      const wallet = document.getElementById("wallet").value;
+      if (!amount || !wallet) {
+        alert("Bitte Menge und Wallet-Adresse eingeben!");
+        return;
+      }
+      document.getElementById("confirmation").style.display = "block";
+    }
+  </script>
+</body>
+</html>
